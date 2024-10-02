@@ -17,9 +17,9 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code # or code-insiders
 
-sudo apt-get install android-sdk -y
-echo 'export ANDROID_HOME="/usr/lib/android-sdk/"' >> "$HOME"/.bashrc
-echo "export PATH='${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/'" >> "$HOME"/.bashrc
+# sudo apt-get install android-sdk -y
+# echo 'export ANDROID_HOME="/usr/lib/android-sdk/"' >> "$HOME"/.bashrc
+# echo "export PATH='${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/'" >> "$HOME"/.bashrc
 
 # Fix cedilha (https://www.danielkossmann.com/pt/ajeitando-cedilha-errado-ubuntu-linux/)
 sudo bash -c "echo 'GTK_IM_MODULE=cedilla' >> /etc/environment"
