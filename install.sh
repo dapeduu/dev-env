@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Install font
+
+font_url='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip'
+font_name=${font_url##*/} 
+wget ${font_url} && unzip ${font_name} -d ~/.fonts && fc-cache -fv
+
 # Install asdf
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
