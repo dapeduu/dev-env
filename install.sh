@@ -6,6 +6,12 @@ font_url='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBr
 font_name=${font_url##*/} 
 wget ${font_url} && unzip ${font_name} -d ~/.fonts && fc-cache -fv
 
+# ZSH extensions
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions
+
 # Install asdf
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
@@ -41,7 +47,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
-
 
 # sudo apt-get install android-sdk -y
 # echo 'export ANDROID_HOME="/usr/lib/android-sdk/"' >> "$HOME"/.bashrc
