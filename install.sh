@@ -30,6 +30,11 @@ if [ -z "$BASH_VERSION" ]; then
     exit 1
 fi
 
+# Fix dualboot with windows time diff
+fix_time_diff() {
+    timedatectl set-local-rtc 1
+}
+
 # Check for required dependencies
 check_dependencies() {
     local dependencies=("wget" "git" "curl" "unzip" "gpg")
@@ -204,6 +209,7 @@ main() {
     install_vscode
     install_docker
     fix_cedilha
+    fix_time_diff 
     configure_git
     
     echo -e "${GREEN}Development Environment Setup Complete! Log out and in to finish the setup.${NC}"
