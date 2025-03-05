@@ -71,6 +71,15 @@ install_zsh() {
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting || warn_log "Failed to clone zsh-syntax-highlighting"
     git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions || warn_log "Failed to clone zsh-completions"
 
+    # Copy .zshrc from script directory to home
+    SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+    if [ -f "$SCRIPT_DIR/.zshrc" ]; then
+        cp "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
+        log "Copied .zshrc from script directory"
+    else
+        warn_log ".zshrc not found in script directory"
+    fi
+
     # Check if ZSH is already the default shell
     if [ "$SHELL" != "$(which zsh)" ]; then
         # Change default shell to ZSH
