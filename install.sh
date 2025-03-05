@@ -82,7 +82,7 @@ install_zsh() {
         log "ZSH is already the default shell"
     fi
     
-    log "ZSH extensions installed"
+    log "ZSH installed"
 }
 
 # Install ASDF version manager
@@ -197,7 +197,7 @@ main() {
     fix_cedilha
     configure_git
     
-    echo -e "${GREEN}Development Environment Setup Complete!${NC}"
+    echo -e "${GREEN}Development Environment Setup Complete! Log out and in to finish the setup.${NC}"
 }
 
 # Run the main setup function
