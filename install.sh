@@ -98,6 +98,10 @@ install_vscode() {
     log "VSCode installed"
 }
 
+install_starship() {
+    curl -sS https://starship.rs/install.sh | sh
+}
+
 # Install Docker
 install_docker() {
     # Remove existing Docker packages
@@ -165,6 +169,7 @@ main() {
     check_dependencies
     
     # Run installation functions
+    install_starship
     install_nerd_fonts
     install_zsh_extensions
     install_asdf
