@@ -54,14 +54,33 @@ install_nerd_fonts() {
     log "JetBrainsMono Nerd Font installed"
 }
 
-# Install ZSH extensions
-install_zsh_extensions() {
+# Install ZSH and set as default shell
+install_zsh() {
+    # Check if ZSH is installed
+    if ! command -v zsh &> /dev/null; then
+        warn_log "ZSH not found. Installing ZSH..."
+        sudo apt-get update
+        sudo apt-get install -y zsh
+    fi
+
+    # Create ZSH directory if it doesn't exist
     mkdir -p ~/.zsh
-    
+
     # Clone ZSH extensions
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions || warn_log "Failed to clone zsh-autosuggestions"
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting || warn_log "Failed to clone zsh-syntax-highlighting"
     git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions || warn_log "Failed to clone zsh-completions"
+
+    # Check if ZSH is already the default shell
+    if [ "$SHELL" != "$(which zsh)" ]; then
+        # Change default shell to ZSH
+        # Use chsh with -s flag to set default shell
+        chsh -s "$(which zsh)"
+        
+        log "ZSH set as default shell"
+    else
+        log "ZSH is already the default shell"
+    fi
     
     log "ZSH extensions installed"
 }
