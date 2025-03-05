@@ -16,6 +16,8 @@ A comprehensive bash script to set up a complete development environment on Ubun
 
 ## Quick Install
 
+On a new machine, execute the following command.
+
 ```bash
 wget -O - https://raw.githubusercontent.com/dapeduu/dev-env/refs/heads/main/install.sh | bash
 ```
