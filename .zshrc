@@ -18,3 +18,6 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Add zsh-completions to fpath
 fpath=(~/.zsh/zsh-completions/src $fpath)
+
+# Adding gpg key to all zsh terminals
+export GPG_TTY=$(tty)
