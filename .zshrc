@@ -1,6 +1,9 @@
 # Load asdf
 . '/home/dapedu/.asdf/asdf.sh'
 
+# Start mise
+eval "$(~/.local/bin/mise activate zsh)"
+
 # Initialize starship prompt
 eval "$(starship init zsh)"
 

@@ -114,6 +114,11 @@ install_asdf() {
     log "ASDF version manager installed"
 }
 
+# Install mise
+install_mise() {
+    curl https://mise.run | sh
+}
+
 # Install VSCode
 install_vscode() {
     # Import Microsoft GPG key
@@ -188,6 +193,8 @@ EOM
 
 # Configure Git
 configure_git() {
+    log "Started configuring Git"
+
     git config --global user.name "Pedro Santos"
     git config --global user.email pedrosantosdevelop@gmail.com
     
@@ -206,9 +213,10 @@ main() {
     install_nerd_fonts
     install_zsh_extensions
     install_asdf
+    install_mise
     install_vscode
     install_docker
-    fix_cedilha
+    # fix_cedilha
     fix_time_diff 
     configure_git
     
