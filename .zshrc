@@ -2,7 +2,7 @@
 . '/home/dapedu/.asdf/asdf.sh'
 
 # Start mise
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh --shims)"
 
 # Initialize starship prompt
 eval "$(starship init zsh)"
