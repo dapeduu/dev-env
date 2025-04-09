@@ -211,7 +211,7 @@ main() {
     # Run installation functions
     install_starship
     install_nerd_fonts
-    install_zsh_extensions
+    install_zsh
     install_asdf
     install_mise
     install_vscode
